@@ -61,13 +61,15 @@ restart_count(FirstChild, C) ->
 	restart_count(FirstChild, C-1).
 
 	
-
 %%_ - _ - _ - _ - _
 %% new function which keeps start function alive that is the logic becouse we cant loop start function
 	
 %% Make calculations endless
 %% Make calculations to be fixed by size like (50 loops)
 %% Create binary tree for homework 5 level binary tree
+
+
+%% Floler form processes - for homework remove nested message in teacher's code.
 
 	
 
