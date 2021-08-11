@@ -1,0 +1,157 @@
+Create user Peter B. Damyanov: 
+curl -X POST --socks5-hostname localhost:8080 --data '{
+     "jsonrpc": "2.0",
+     "id": 1,
+     "method": "keystore.createUser",
+     "params": {
+         "username": "Peter B. Damyanov",
+         "password": "customer winner fishing criticism oven mud drawer perspective honey insect analysis stranger"
+     }
+}' -H 'content-type:application/json;' https://dev.avax.blockchain.vending.averato.com/ext/keystore
+
+
+Create user Boris P. Damyanov: 
+curl -X POST --socks5-hostname localhost:8080 --data '{
+     "jsonrpc": "2.0",
+     "id": 2,
+     "method": "keystore.createUser",
+     "params": {
+         "username": "Boris P. Damyanov",
+         "password": "farmer meaning river communication union cancer independence unit person strategy fortune employer"
+     }
+}' -H 'content-type:application/json;' https://dev.avax.blockchain.vending.averato.com/ext/keystore
+
+
+curl -X POST --socks5-hostname localhost:8080 --data '{
+     "jsonrpc": "2.0",
+     "id": 2,
+     "method": "keystore.createUser",
+     "params": {
+         "username": "Georgi P. Damyanov",
+         "password": "keep community meaning witness comfort greet nervous desire measure free correspond responsible"
+     }
+}' -H 'content-type:application/json;' https://dev.avax.blockchain.vending.averato.com/ext/keystore
+
+
+Create Address P. B. D.:
+curl -X POST --socks5-hostname localhost:8080 --data '{
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method" : "avm.createAddress",
+    "params" :{
+        "username":"Peter B. Damyanov",
+        "password":"customer winner fishing criticism oven mud drawer perspective honey insect analysis stranger"
+    }
+}' -H 'content-type:application/json;' https://dev.avax.blockchain.vending.averato.com/ext/avm
+
+Address:
+{"jsonrpc":"2.0","result":{"address":"X-fuji1rkek2yf374afcfvnpekhwarxa3rhqwuu3ry2hk"},"id":4}
+
+Create Address B. P. D.:
+curl -X POST --socks5-hostname localhost:8080 --data '{
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method" : "avm.createAddress",
+    "params" :{
+        "username":"Boris P. Damyanov",
+        "password":"farmer meaning river communication union cancer independence unit person strategy fortune employer"
+    }
+}' -H 'content-type:application/json;' https://dev.avax.blockchain.vending.averato.com/ext/avm
+
+Address:
+{"jsonrpc":"2.0","result":{"address":"X-fuji1sk6d0u3njknexg77u7t0gl2ja4dpzhkezay2xj"},"id":4}
+
+Create Address B. P. D.:
+curl -X POST --socks5-hostname localhost:8080 --data '{
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method" : "avm.createAddress",
+    "params" :{
+        "username":"Georgi P. Damyanov",
+        "password":"keep community meaning witness comfort greet nervous desire measure free correspond responsible"
+    }
+}' -H 'content-type:application/json;' https://dev.avax.blockchain.vending.averato.com/ext/avm
+
+Address:
+{"jsonrpc":"2.0","result":{"address":"X-fuji1qa583099pp6pcmh5mwzhuxyd6rq8lk4fj6hygu"},"id":4}
+
+
+List Addresses (If you forget it):
+curl -X POST --socks5-hostname localhost:8080 --data '{
+    "jsonrpc": "2.0",
+    "method": "avm.listAddresses",
+    "params": {
+        "username":"Peter B. Damyanov",
+        "password":"customer winner fishing criticism oven mud drawer perspective honey insect analysis stranger"
+    },
+    "id": 4
+}' -H 'content-type:application/json;' https://dev.avax.blockchain.vending.averato.com/ext/avm
+
+
+Get Balance:
+curl -X POST --socks5-hostname localhost:8080 --data '{
+    "jsonrpc":"2.0",
+    "id"     :5,
+    "method" :"avm.getBalance",
+    "params" :{
+        "address":"X-fuji1qa583099pp6pcmh5mwzhuxyd6rq8lk4fj6hygu",
+        "assetID"  :"AVAX"
+    }
+}' -H 'content-type:application/json;' https://dev.avax.blockchain.vending.averato.com/ext/avm
+
+Result:
+{"jsonrpc":"2.0","result":{"balance":"3997899000","utxoIDs":[{"txID":"jqmiaytzK6dGYgV1trYcaoN8y4G18LmR5J1krJD8hKPWsTHwi","outputIndex":1},{"txID":"QhhtpuZeq5y6Uq7jYHBSANpNZj93zi3n6KHBUdJUMCsd6b6aM","outputIndex":0}]},"id":5}
+
+Send Avax N2N:
+curl -X POST --socks5-hostname localhost:8080 --data '{
+    "jsonrpc":"2.0",
+    "id"     :7,
+    "method" :"avm.send",
+    "params" :{
+        "assetID"    :"AVAX",
+        "amount"     :1000,
+        "to"         :"X-fuji1sk6d0u3njknexg77u7t0gl2ja4dpzhkezay2xj",
+        "changeAddr" :"X-fuji1qa583099pp6pcmh5mwzhuxyd6rq8lk4fj6hygu",
+        "username"   :"Georgi P. Damyanov",
+        "password"   :"keep community meaning witness comfort greet nervous desire measure free correspond responsible"
+    }
+}' -H 'content-type:application/json;' https://dev.avax.blockchain.vending.averato.com/ext/avm
+
+Result:
+{"jsonrpc":"2.0","result":{"txID":"262DDK2oRL8JPMwLPdUPVumacEpQUzid4djzTiKwSV7DkDfZ2R","changeAddr":"X-fuji1qa583099pp6pcmh5mwzhuxyd6rq8lk4fj6hygu"},"id":7}
+
+
+Send Avax N2N:
+curl -X POST --socks5-hostname localhost:8080 --data '{
+    "jsonrpc":"2.0",
+    "id"     :7,
+    "method" :"avm.send",
+    "params" :{
+        "assetID"    :"AVAX",
+        "amount"     :100000,
+        "to"         :"X-fuji1sk6d0u3njknexg77u7t0gl2ja4dpzhkezay2xj",
+        "changeAddr" :"X-fuji1qa583099pp6pcmh5mwzhuxyd6rq8lk4fj6hygu",
+        "username"   :"Georgi P. Damyanov",
+        "password"   :"keep community meaning witness comfort greet nervous desire measure free correspond responsible"
+    }
+}' -H 'content-type:application/json;' https://dev.avax.blockchain.vending.averato.com/ext/avm
+
+Result:
+{"jsonrpc":"2.0","result":{"txID":"jqmiaytzK6dGYgV1trYcaoN8y4G18LmR5J1krJD8hKPWsTHwi","changeAddr":"X-fuji1qa583099pp6pcmh5mwzhuxyd6rq8lk4fj6hygu"},"id":7}
+
+
+
+
+
+Get Transaction Status.
+curl -X POST --socks5-hostname localhost:8080 --data '{
+    "jsonrpc":"2.0",
+    "id"     :8,
+    "method" :"avm.getTxStatus",
+    "params" :{
+        "txID":"jqmiaytzK6dGYgV1trYcaoN8y4G18LmR5J1krJD8hKPWsTHwi"
+    }
+}' -H 'content-type:application/json;' https://dev.avax.blockchain.vending.averato.com/ext/avm
+
+Result:
+{"jsonrpc":"2.0","result":{"status":"Accepted"},"id":8}
